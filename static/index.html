@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deploy Detective — Exasol Agentic AIOps</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">EXASOL PERSONAL · AGENTIC AIOPS</div>
+    <h1>Deploy Detective</h1>
+    <p>Find the cause. Take the safe action. Prove the recovery.</p>
+  </div>
+  <div class="top-actions">
+    <div id="db-badge" class="badge"><span class="dot"></span> Checking Exasol…</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero-grid">
+    <div class="panel prompt-panel">
+      <div class="panel-title">INCIDENT CONSOLE</div>
+      <label for="request">What should the agent investigate?</label>
+      <textarea id="request" rows="4">What's wrong with checkout?</textarea>
+      <button id="run">Run investigation</button>
+      <div class="hint">Try: “checkout is slow”, “why is payment failing?”, or “investigate catalog”.</div>
+    </div>
+
+    <div class="panel outcome-panel">
+      <div class="panel-title">OUTCOME</div>
+      <div id="status" class="status idle">READY</div>
+      <div id="narrative" class="narrative">The agent has not started an investigation.</div>
+      <div class="metrics-row">
+        <div><span>Service</span><strong id="service">—</strong></div>
+        <div><span>Decision</span><strong id="action">—</strong></div>
+        <div><span>Verification</span><strong id="verification">—</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel why-panel">
+    <div class="panel-head">
+      <div>
+        <div class="panel-title">WHY EXASOL?</div>
+        <h2>Transparent correlation, not a black box</h2>
+      </div>
+      <div class="tag-row">
+        <span class="tag">LOGS</span><span class="tag">METRICS</span><span class="tag">DEPLOYS</span><span class="tag">WINDOWS</span><span class="tag">p95</span>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div><strong>High-volume telemetry</strong><span>Replay generator scales the row counts used in the benchmark.</span></div>
+      <div><strong>Explainable SQL</strong><span>Every RCA signal is a query judges can read and replay.</span></div>
+      <div><strong>Closed loop</strong><span>Action is audited, then the agent queries the resulting state.</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <div class="panel-title">AGENT TRACE</div>
+        <h2>Plan → Investigate → Decide → Act → Verify</h2>
+      </div>
+      <div id="timing" class="timing">—</div>
+    </div>
+    <div id="trace" class="trace empty">Run an investigation to see tool calls, SQL evidence and the action boundary.</div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
